@@ -1,0 +1,8 @@
+*** Settings ***
+Library           auto_twitter.TwitterAutoLibrary
+Library           Selenium2Library
+
+*** Test Cases ***
+valid login
+    Open Browser    https://twitter.com
+    Login    netsgr8_4us@yahoo.com    thisispassword

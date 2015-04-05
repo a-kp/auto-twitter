@@ -1,4 +1,4 @@
-from web_apps.twitter.components.post_login_home.global_actions import GlobalActions
+from auto_twitter._components.post_login_home.global_actions import GlobalActions
 
 __author__ = 'anupama'
 

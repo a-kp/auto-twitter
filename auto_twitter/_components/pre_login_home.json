@@ -1,6 +1,6 @@
 {% extends "base.json" %} 
 {% block content %}
-    "LoginSpan": {
+    "LoginForm": {
         "username": {
             "props": {
                 "loc": "#signin-email"

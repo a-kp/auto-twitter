@@ -13,13 +13,14 @@
 #  limitations under the License.
 
 
-from src.jataayu.test_template.web_component import WebComponent
+from testatron import WebComponent
+from auto_twitter import _components
+import os
 
-__author__ = 'anupama'
-
-class GlobalActions(WebComponent):
+class TweetBox(WebComponent):
     def __init__(self):
-        super(GlobalActions, self).__init__(self.__class__)
+        json_path = os.path.dirname(_components.__file__)
+        super(TweetBox, self).__init__(self.__class__, json_path)
 
     def tweet(self, tweet_message):
         self.tweet_box.send_keys(tweet_message)
@@ -29,5 +30,11 @@ class GlobalActions(WebComponent):
 
 
 
-def check_global_actions(test_input=None):
-    GlobalActions()
+# login = Login ("pre_login_home.json", "login-span")
+# login.login("netsgr8_4us@yahoo.com" , "thisispassword")
+# new_tweet = NewTweet ("post_login_home.json", "new_tweet")
+# new_tweet.tweet("auto tweet")
+# # TODO 1  # make driver common for all classes in a test, # write all classes for one .json file in one py file
+
+# def new_tweet(test_input=None):
+#     TweetBox().tweet("I  am a Robot")

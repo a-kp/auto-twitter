@@ -1,3 +1,4 @@
+__author__ = 'anupama'
 # Copyright 2014 Anupama Kattiparambil Prakasan
 #
 #  Licensed under the Apache License, Version 2.0 (the "License");
@@ -13,27 +14,26 @@
 #  limitations under the License.
 
 
-from testatron.test_template.web_component import WebComponent
+from testatron import WebComponent
+from auto_twitter import _components
+import os
 
-__author__ = 'anupama'
 
-class TweetBox(WebComponent):
+class LoginForm(WebComponent):
     def __init__(self):
-        super(TweetBox, self).__init__(self.__class__)
+        json_path = os.path.dirname(_components.__file__)
+        super(LoginForm, self).__init__(self.__class__, json_path)
 
-    def tweet(self, tweet_message):
-        self.tweet_box.send_keys(tweet_message)
-        self.component_loader.detect_element("tweet_button", make_visible=True)
-        self.objectify("tweet_button", self.component_loader.props)
-        self.tweet_button.click()
-
-
+    def login(self, username, password, check=True, fail=False):
+        self.username.send_keys(username)
+        self.password.send_keys(password)
+        self.login_button.click()
+        #TODO
+        if check:
+            pass
+        if fail:
+            pass
 
 # login = Login ("pre_login_home.json", "login-span")
 # login.login("netsgr8_4us@yahoo.com" , "thisispassword")
-# new_tweet = NewTweet ("post_login_home.json", "new_tweet")
-# new_tweet.tweet("auto tweet")
-# # TODO 1  # make driver common for all classes in a test, # write all classes for one .json file in one py file
 
-def new_tweet(test_input=None):
-    TweetBox().tweet("I  am a Robot")
