@@ -1,6 +1,6 @@
 {% extends "base.json" %} 
 {% block content %}
-    "LoginSpan": {
+    "LoginForm": {
         "username": {
             "props": {
                 "loc": "#signin-email"
@@ -14,6 +14,12 @@
         "login_button": {
             "props": {
                 "loc": ".flex-table-btn"
+            }
+        },
+        "login_error_message": {
+            "props": {
+                "loc": "#message-drawer > div > div > span",
+                "visible" :false
             }
         }
     },

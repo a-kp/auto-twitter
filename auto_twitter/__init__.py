@@ -13,3 +13,16 @@ __author__ = 'anupama'
 #  See the License for the specific language governing permissions and
 #  limitations under the License.
 
+from .actions.login import Login
+from .actions.tweet import Tweet
+
+class TwitterAutoLibrary(Login, Tweet):
+    ROBOT_LIBRARY_SCOPE = 'GLOBAL'
+
+    def __init__(self):
+        for base in TwitterAutoLibrary.__bases__:
+            base.__init__(self)
+
+
+
+

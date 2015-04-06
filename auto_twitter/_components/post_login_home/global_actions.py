@@ -1,4 +1,3 @@
-__author__ = 'anupama'
 # Copyright 2014 Anupama Kattiparambil Prakasan
 #
 #  Licensed under the Apache License, Version 2.0 (the "License");
@@ -14,18 +13,22 @@ __author__ = 'anupama'
 #  limitations under the License.
 
 
-from testatron.test_template.web_component import WebComponent
+from testatron import WebComponent
+from auto_twitter import _components
+import os
+
+class GlobalActions(WebComponent):
+    def __init__(self):
+        json_path = os.path.dirname(_components.__file__)
+        super(GlobalActions, self).__init__(self.__class__, json_path)
+
+    def tweet(self, tweet_message):
+        self.tweet_box.send_keys(tweet_message)
+        self.component_loader.detect_element("tweet_button", make_visible=True)
+        self.objectify("tweet_button", self.component_loader.props)
+        self.tweet_button.click()
 
 
-class LoginSpan(WebComponent):
-    def __init__(self ):
-        super(LoginSpan, self).__init__(self.__class__)
 
-    def login(self, username, password):
-        self.username.send_keys(username)
-        self.password.send_keys(password)
-        self.login_button.click()
-
-# login = Login ("pre_login_home.json", "login-span")
-# login.login("netsgr8_4us@yahoo.com" , "thisispassword")
-
+def check_global_actions(test_input=None):
+    GlobalActions()

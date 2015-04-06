@@ -13,19 +13,22 @@
 #  limitations under the License.
 
 
-from testatron.test_template.web_component import WebComponent
-
-__author__ = 'anupama'
+from testatron import WebComponent
+from auto_twitter import _components
+import os
 
 class TweetBox(WebComponent):
     def __init__(self):
-        super(TweetBox, self).__init__(self.__class__)
+        json_path = os.path.dirname(_components.__file__)
+        super(TweetBox, self).__init__(self.__class__, json_path)
 
     def tweet(self, tweet_message):
         self.tweet_box.send_keys(tweet_message)
         self.component_loader.detect_element("tweet_button", make_visible=True)
         self.objectify("tweet_button", self.component_loader.props)
         self.tweet_button.click()
+        self.s2l.reload_page()
+        self.s2l.wait_until_page_contains(tweet_message, 30)
 
 
 
@@ -35,5 +38,5 @@ class TweetBox(WebComponent):
 # new_tweet.tweet("auto tweet")
 # # TODO 1  # make driver common for all classes in a test, # write all classes for one .json file in one py file
 
-def new_tweet(test_input=None):
-    TweetBox().tweet("I  am a Robot")
+# def new_tweet(test_input=None):
+#     TweetBox().tweet("I  am a Robot")

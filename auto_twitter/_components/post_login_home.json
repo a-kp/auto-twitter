@@ -3,12 +3,12 @@
     "TweetBox": {
         "tweet_box": {
             "props": {
-                "loc": "#tweet-box-mini-home-profile"
+                "loc": "#tweet-box-home-timeline"
             }
         },
         "tweet_button": {
             "props": {
-                "loc": "div.toolbar:nth-child(10) > div:nth-child(2) > button:nth-child(3)",
+                "loc":" #timeline div.tweet-button > button > span.button-text.tweeting-text",
                 "visible" :false
             }
         }
