@@ -27,6 +27,8 @@ class TweetBox(WebComponent):
         self.component_loader.detect_element("tweet_button", make_visible=True)
         self.objectify("tweet_button", self.component_loader.props)
         self.tweet_button.click()
+        self.s2l.reload_page()
+        self.s2l.wait_until_page_contains(tweet_message, 30)
 
 
 

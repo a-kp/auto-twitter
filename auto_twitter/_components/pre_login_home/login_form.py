@@ -24,15 +24,16 @@ class LoginForm(WebComponent):
         json_path = os.path.dirname(_components.__file__)
         super(LoginForm, self).__init__(self.__class__, json_path)
 
-    def login(self, username, password, check=True, fail=False):
+    def login(self, username, password, fail=False):
         self.username.send_keys(username)
         self.password.send_keys(password)
         self.login_button.click()
-        #TODO
-        if check:
-            pass
         if fail:
-            pass
+            #TODO have error messages loaded from json
+            self.s2l.wait_until_page_contains("and password you entered did not match our records", 30)
+            # self.component_loader.detect_element("login_error_message", make_visible=True)
+            # self.objectify("login_error_message", self.component_loader.props)
+            # print(str(self.login_error_message.__dict__))
 
 # login = Login ("pre_login_home.json", "login-span")
 # login.login("netsgr8_4us@yahoo.com" , "thisispassword")

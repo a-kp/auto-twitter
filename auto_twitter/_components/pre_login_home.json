@@ -15,6 +15,12 @@
             "props": {
                 "loc": ".flex-table-btn"
             }
+        },
+        "login_error_message": {
+            "props": {
+                "loc": "#message-drawer > div > div > span",
+                "visible" :false
+            }
         }
     },
 {% endblock %}
