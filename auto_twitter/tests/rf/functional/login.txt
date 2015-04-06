@@ -8,4 +8,3 @@ Resource          resource.robot
 valid login
     Open Browser    https://twitter.com
     Login    ${valid_username}    ${valid_password}
-    Tweet    restart
