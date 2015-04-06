@@ -1,6 +1,6 @@
 #pre-requisites
-Firefox
-git
+1. Firefox
+2. git
 
 # auto-twitter
 
