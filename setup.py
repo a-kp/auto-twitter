@@ -9,5 +9,5 @@ setup(name='auto_twitter',
           '': ['*.json'],
 
           },
-      install_requires=['robotframework-selenium2library','robotframework-faker'],
+      install_requires=['robotframework-selenium2library', 'fake-factory', 'robotframework-faker'],
       )
