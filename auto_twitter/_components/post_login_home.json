@@ -11,6 +11,27 @@
                 "loc":" #timeline div.tweet-button > button > span.button-text.tweeting-text",
                 "visible" :false
             }
+        },
+        "retweet_buttons": {
+            "props": {
+                "loc": ".Icon.Icon--retweet",
+                "list": true
+            }
+        }
+    },
+    "HomeStream": {
+        "retweet_buttons": {
+            "props": {
+                "loc": ".Icon.Icon--retweet",
+                "list": true
+            }
+        }
+    },
+    "RetweetDialog": {
+        "retweet_button": {
+            "props": {
+                "loc": "#retweet-tweet-dialog-dialog .tweet-button"
+            }
         }
     },
 {% endblock %}

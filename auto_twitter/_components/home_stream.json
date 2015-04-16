@@ -1,0 +1,11 @@
+{% extends "logged_in_base.json" %}
+{% block content %}
+    "HomeStream": {
+        "retweet_buttons": {
+            "props": {
+                "loc": ".Icon.Icon--retweet",
+                "list": true
+            }
+        }
+    },
+{% endblock %}
