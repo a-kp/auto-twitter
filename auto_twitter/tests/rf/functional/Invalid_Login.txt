@@ -7,7 +7,7 @@ Documentation     A test suite containing tests related to invalid login.
 ...
 ...               This suite also demonstrates using setups and teardowns in
 ...               different levels.
-Suite Setup       Open Browser    https://twitter.com
+Suite Setup       Open Browser    https://twitter.com    browser=phantomjs
 Suite Teardown    Close Browser
 Test Setup        go to    https://twitter.com
 Test Template     Login

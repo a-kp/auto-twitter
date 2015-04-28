@@ -6,5 +6,6 @@ Resource          resource.robot
 
 *** Test Cases ***
 valid login
-    Open Browser    https://twitter.com
+    Open Browser    https://twitter.com    phantomjs
+    Capture Page Screenshot
     Login    ${valid_username}    ${valid_password}
