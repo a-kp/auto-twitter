@@ -1,4 +1,3 @@
-__author__ = 'anupama'
 # Copyright 2014 Anupama Kattiparambil Prakasan
 #
 #  Licensed under the Apache License, Version 2.0 (the "License");
@@ -13,17 +12,18 @@ __author__ = 'anupama'
 #  See the License for the specific language governing permissions and
 #  limitations under the License.
 
-from .actions.login import Login
-from .actions.tweet import Tweet
-from .actions.home_stream import HomeStream
 
-class TwitterAutoLibrary(Login, Tweet, HomeStream):
-    ROBOT_LIBRARY_SCOPE = 'GLOBAL'
+from testatron import WebComponent
+from auto_twitter import _components
+import os
 
+class RetweetDialog(WebComponent):
     def __init__(self):
-        for base in TwitterAutoLibrary.__bases__:
-            base.__init__(self)
+        json_path = os.path.dirname(_components.__file__)
+        super(RetweetDialog, self).__init__(self.__class__, json_path)
 
+    def retweet(self, count):
+        self.retweet_button.click()
 
 
 
