@@ -30,7 +30,7 @@ class LoginForm(WebComponent):
         self.login_button.click()
         if fail:
             #TODO have error messages loaded from json
-            self.s2l.wait_until_page_contains("and password you entered did not match our records", 30)
+            self.s2l.wait_until_page_contains("you entered did not match our records", 30)
             # self.component_loader.detect_element("login_error_message", make_visible=True)
             # self.objectify("login_error_message", self.component_loader.props)
             # print(str(self.login_error_message.__dict__))
