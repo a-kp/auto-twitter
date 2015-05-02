@@ -5,5 +5,8 @@ Resource          resource.robot
 Library           FakerLibrary
 
 *** Test Cases ***
-retweet 10
-    Retweet    10
+retweet 1
+    Retweet    1
+
+retweet 5
+    Retweet    5

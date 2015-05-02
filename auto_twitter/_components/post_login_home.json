@@ -22,12 +22,14 @@
     "HomeStream": {
         "retweet_buttons": {
             "props": {
-                "loc": ".Icon.Icon--retweet",
+                "cssloc": ".Icon.Icon--retweet",
+                "xloc":"//*[@data-original-title='Retweet']//*[@class='Icon Icon--retweet']",
+                "loc":"//*[@class='Icon Icon--retweet']",
                 "list": true
             }
         }
     },
-    "RetweetDialog": {
+    "RetweetDialogBox": {
         "retweet_button": {
             "props": {
                 "loc": "#retweet-tweet-dialog-dialog .tweet-button"

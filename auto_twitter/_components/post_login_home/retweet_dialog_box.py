@@ -17,12 +17,12 @@ from testatron import WebComponent
 from auto_twitter import _components
 import os
 
-class RetweetDialog(WebComponent):
+class RetweetDialogBox(WebComponent):
     def __init__(self):
         json_path = os.path.dirname(_components.__file__)
-        super(RetweetDialog, self).__init__(self.__class__, json_path)
+        super(RetweetDialogBox, self).__init__(self.__class__, json_path)
 
-    def retweet(self, count):
+    def retweet(self):
         self.retweet_button.click()
 
 

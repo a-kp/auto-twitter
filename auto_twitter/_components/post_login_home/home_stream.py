@@ -15,7 +15,9 @@
 
 from testatron import WebComponent
 from auto_twitter import _components
+from robot.api import logger
 import os
+from .retweet_dialog_box import RetweetDialogBox
 
 class HomeStream(WebComponent):
     def __init__(self):
@@ -24,7 +26,9 @@ class HomeStream(WebComponent):
 
     def retweet(self, count):
         for retweet_button in self.retweet_buttons[:count][0::2]:
+            logger.debug("clicking on retweet button")
             retweet_button.click()
+            RetweetDialogBox().retweet()
 
 
 

@@ -1,6 +1,6 @@
 import datetime
 
-from auto_twitter._components.post_login_home.retweet_dialog import RetweetDialog as RD
+from auto_twitter._components.post_login_home.retweet_dialog_box import RetweetDialogBox as RD
 
 
 __author__ = 'anupama'
